@@ -1,4 +1,4 @@
-// vite.config.js
+import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [
     laravel({
@@ -11,6 +11,6 @@ export default defineConfig({
   ],
   build: {
     manifest: true,
-    outDir: 'public/build/.vite',
+    outDir: 'public/build',
   },
 });
