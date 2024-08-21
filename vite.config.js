@@ -13,6 +13,17 @@ export default defineConfig({
     ],
     build: {
         manifest: true,
-        outDir: 'public/build', // Diretório onde os arquivos compilados serão colocados
+        outDir: 'public/build',
+        rollupOptions: {
+            input: {
+                main: 'resources/js/app.js',
+                style: 'resources/css/app.css',
+            },
+            output: {
+                entryFileNames: 'assets/[name]-[hash].js',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                assetFileNames: 'assets/[name]-[hash][extname]',
+            },
+        },
     },
 });
